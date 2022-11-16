@@ -149,7 +149,10 @@ class SendThread extends Thread {
     @Override
     public void run() {
         Looper.prepare();
-        mHandler = new Handler(Looper.getMainLooper()) {
+        // no working
+        // mHandler = new Handler(Looper.getMainLooper()) {
+        // working
+        mHandler = new Handler(Looper.myLooper()) {
             @Override
             public void handleMessage(Message msg) {
                 switch (msg.what) {
